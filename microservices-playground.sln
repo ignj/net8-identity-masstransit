@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "auth", "auth\auth.csproj", "{DB495E51-18DC-477B-BD32-102EFA8E7676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "contracts", "contracts\contracts.csproj", "{F11AA028-DDCE-4F7D-89F9-77FC5587B670}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ping-consumer", "ping-consumer\ping-consumer.csproj", "{F9944889-5659-4E40-B3DB-366F32090454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ping-consumer", "ping-consumer\ping-consumer.csproj", "{6892BED4-EF09-47A7-89AA-03463B52510D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ping-producer", "ping-producer\ping-producer.csproj", "{BAE7BC22-A450-4B65-BC28-865A2F4B7DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ping-producer", "ping-producer\ping-producer.csproj", "{69F5821D-AC8C-45AA-B2A8-576B953B23C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DB495E51-18DC-477B-BD32-102EFA8E7676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB495E51-18DC-477B-BD32-102EFA8E7676}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB495E51-18DC-477B-BD32-102EFA8E7676}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB495E51-18DC-477B-BD32-102EFA8E7676}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9944889-5659-4E40-B3DB-366F32090454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9944889-5659-4E40-B3DB-366F32090454}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9944889-5659-4E40-B3DB-366F32090454}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9944889-5659-4E40-B3DB-366F32090454}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAE7BC22-A450-4B65-BC28-865A2F4B7DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAE7BC22-A450-4B65-BC28-865A2F4B7DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAE7BC22-A450-4B65-BC28-865A2F4B7DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAE7BC22-A450-4B65-BC28-865A2F4B7DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11AA028-DDCE-4F7D-89F9-77FC5587B670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11AA028-DDCE-4F7D-89F9-77FC5587B670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11AA028-DDCE-4F7D-89F9-77FC5587B670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11AA028-DDCE-4F7D-89F9-77FC5587B670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6892BED4-EF09-47A7-89AA-03463B52510D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6892BED4-EF09-47A7-89AA-03463B52510D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6892BED4-EF09-47A7-89AA-03463B52510D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6892BED4-EF09-47A7-89AA-03463B52510D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F5821D-AC8C-45AA-B2A8-576B953B23C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F5821D-AC8C-45AA-B2A8-576B953B23C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F5821D-AC8C-45AA-B2A8-576B953B23C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F5821D-AC8C-45AA-B2A8-576B953B23C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EA70B97D-E03C-4053-98AC-3C714B760E9C}
+		SolutionGuid = {11D306B4-4C2A-4BD4-84C5-2BF7A66ADB4E}
 	EndGlobalSection
 EndGlobal

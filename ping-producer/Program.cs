@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Context;
+using contracts;
 using MassTransit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -44,8 +45,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
-app.MapGet("/ping", (IPublishEndpoint publisher) => publisher.Publish(new { Text = $"Ping {DateTime.UtcNow}" }));
-app.MapGet("/ping-auth", (IPublishEndpoint publisher, ClaimsPrincipal user) => publisher.Publish(new { Text = $"Ping {DateTime.UtcNow} - {user.Identity!.Name}" }))
+app.MapGet("/ping", (IPublishEndpoint publisher) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow}" }));
+app.MapGet("/ping-auth", (IPublishEndpoint publisher, ClaimsPrincipal user) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow} - {user.Identity!.Name}" }))
     .RequireAuthorization();
 
 app.Run();
