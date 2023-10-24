@@ -14,10 +14,10 @@ builder.Services.AddMassTransit(o =>
     o.SetKebabCaseEndpointNameFormatter();
     o.UsingRabbitMq((ctx, cfg) =>
     {
-        cfg.Host("localhost", "/", h =>
+        cfg.Host(Environment.GetEnvironmentVariable("RMQ_HOST"), Environment.GetEnvironmentVariable("RMQ_VHOST"), h =>
         {
-            h.Username("guest");
-            h.Password("guest");
+            h.Username(Environment.GetEnvironmentVariable("RMQ_USR"));
+            h.Password(Environment.GetEnvironmentVariable("RMQ_PWD"));
         });
         cfg.ConfigureEndpoints(ctx);
     });
@@ -34,17 +34,14 @@ builder.Services.AddIdentityCore<ApplicationUser>()
     .AddEntityFrameworkStores<AuthContext>()
     .AddApiEndpoints();
 
-var app = builder.Build();
+builder.Services.AddHealthChecks();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHsts();
-}
+var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
+app.MapHealthChecks("/healthcheck");
 app.MapGet("/ping", (IPublishEndpoint publisher) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow}" }));
 app.MapGet("/ping-auth", (IPublishEndpoint publisher, ClaimsPrincipal user) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow} - {user.Identity!.Name}" }))
     .RequireAuthorization();

@@ -2,27 +2,37 @@ version: '3.8'
 
 services:
   ping-producer:
-    image: ping-producer
+    build: 
+      context: .
+      dockerfile: ./dockerfile-producer
+    environment:
+      RMQ_HOST: "rabbit"
+      RMQ_VHOST: "/"
+      RMQ_USR: "guest"
+      RMQ_PWD: "guest"
     ports:
-      - "5000:5000"
-      - "5001:5001"
-    depends_on:
-      - rabbitmq
-      - postgresql
+      - "5000:8080"
 
   ping-consumer:
-    image: ping-consumer
+    build: 
+      context: .
+      dockerfile: ./dockerfile-consumer
+    environment:
+      RMQ_HOST: "rabbit"
+      RMQ_VHOST: "/"
+      RMQ_USR: "guest"
+      RMQ_PWD: "guest"
     ports:
-      - "6000:6000"
-      - "6001:6001"
-    depends_on:
-      - rabbitmq
+      - "6000:8080"
 
   rabbitmq:
     image: rabbitmq:management
+    hostname: rabbit
 
   postgresql:
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    ports: 
+      - "15432:5432"

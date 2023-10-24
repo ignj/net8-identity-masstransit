@@ -1,12 +1,17 @@
 {
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "https": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:6000;http://localhost:6001",
+      "applicationUrl": "http://localhost:6000;https://localhost:6001",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RMQ_HOST": "localhost",
+        "RMQ_VHOST": "/",
+        "RMQ_USR": "guest",
+        "RMQ_PWD": "guest"
       }
     }
   }

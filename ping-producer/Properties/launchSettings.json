@@ -9,6 +9,10 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "AUTH_CONNSTRING": "Server=localhost;Port=5432;Database=Auth;User Id=postgres;Password=postgres;",
+        "RMQ_HOST": "localhost",
+        "RMQ_VHOST": "/",
+        "RMQ_USR": "guest",
+        "RMQ_PWD": "guest"
       }
     }
   }
