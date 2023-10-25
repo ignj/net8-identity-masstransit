@@ -38,9 +38,12 @@ builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
+app.MigrateDatabase();
+
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
+app.MapIdentityApi<ApplicationUser>();
 app.MapHealthChecks("/healthcheck");
 app.MapGet("/ping", (IPublishEndpoint publisher) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow}" }));
 app.MapGet("/ping-auth", (IPublishEndpoint publisher, ClaimsPrincipal user) => publisher.Publish<PingMessage>(new { Text = $"Ping {DateTime.UtcNow} - {user.Identity!.Name}" }))

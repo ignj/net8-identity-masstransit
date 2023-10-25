@@ -10,6 +10,7 @@ services:
       RMQ_VHOST: "/"
       RMQ_USR: "guest"
       RMQ_PWD: "guest"
+      AUTH_CONNSTRING: "Server=postgresql;Port=5432;Database=Auth;User Id=postgres;Password=postgres;"
     ports:
       - "5000:8080"
 
@@ -31,6 +32,7 @@ services:
 
   postgresql:
     image: postgres
+    hostname: postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
